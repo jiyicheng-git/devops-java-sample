@@ -26,6 +26,8 @@ spec:
         - image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           imagePullPolicy: Always
           name: ks-sample
+          imagePullSecrets:
+            - name: regsecret
           readinessProbe:
             httpGet:
               path: /
